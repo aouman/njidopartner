@@ -16,14 +16,11 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('backend/plugins/images/favicon.png')}}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
     <link href="{{asset('backend/plugins/bower_components/chartist/dist/chartist.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('backend/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('backend/css/style.min.css')}}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/94491a0993.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -88,7 +85,7 @@
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="{{asset('backend/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">{{auth()->user()->name}}</span></a>
+                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
