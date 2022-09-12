@@ -1,4 +1,4 @@
-@extends('layouts.adminApp')
+@extends('layouts.homeApp')
 
 @section('content')
 <!-- ============================================================== -->
@@ -28,7 +28,7 @@
                     <ol class="breadcrumb ms-auto">
                         <li></li>
                     </ol>
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
+                    <a href="/ajouter-apparte"
                         class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Ajouter un appartement</a>
                 </div>
             </div>
@@ -60,20 +60,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              @foreach($all as $key=>$row)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Studio</td>
-                                    <td>70000 Fcfa</td>
+                                    <td>{{$key+1}}</td>
+                                    <td>{{$row->Name}}</td>
+                                    <td>{{$row->Price}} Fcfa</td>
                                     <td>
-                                      <a href="#" class="font-18 bg-info text-white p-2 rounded-3 shadow-sm m-r-30">
+                                      <a href="{{URL::to('/modifier-apparte/'.$row->id)}}" class="font-18 bg-info text-white p-2 rounded-3 shadow-sm m-r-30">
                                         <i class="fas fa-edit"></i>
                                       </a>
-                                      <a href="#" class="font-18 bg-danger text-white p-2 rounded-3 shadow-sm">
+                                      <a href="{{URL::to('/delete-apparte/'.$row->id)}}" class="font-18 bg-danger text-white p-2 rounded-3 shadow-sm">
                                         <i class="fas fa-trash"></i>
                                       </a>
                                     </td>
 
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

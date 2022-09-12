@@ -1,4 +1,4 @@
-@extends('layouts.adminApp')
+@extends('layouts.homeApp')
 
 @section('content')
 <!-- ============================================================== -->
@@ -42,7 +42,8 @@
             <div class="col-sm-6">
               <div class="card shadow rounded rounded-3">
                   <div class="card-body">
-                      <form class="form-horizontal form-material" action="{{URL::to('/update-user/'.$edit->id)}}" method="post">
+                      <form class="form-horizontal form-material" action="{{URL::to('update-locataire/'.$edit->id)}}" method="post">
+                        @method('post')
                         @csrf
                           <div class="form-group mb-4">
                               <label class="col-md-12 p-0">Nom et Prénoms</label>
@@ -63,7 +64,7 @@
                               <div class="col-md-12 border-bottom p-0">
                                   <input type="tel" placeholder="05 05 0478562"
                                       class="form-control p-0 border-0" name="phone"
-                                      id="phone">
+                                      id="phone" value="{{$edit->phone}}">
                               </div>
                           </div>
                           <div class="form-group mb-4">
@@ -71,7 +72,7 @@
                               <div class="col-md-12 border-bottom p-0">
                                   <input type="date" placeholder="25/03/2022"
                                       class="form-control p-0 border-0" name="date"
-                                      id="date">
+                                      id="date" value="{{$edit->date_location}}">
                               </div>
                           </div>
                           <div class="form-group mb-4">
@@ -88,32 +89,11 @@
                                       id="password-confirm" value="{{$edit->password}}">
                               </div>
                           </div>
-                          <div class="form-group mb-4">
-                              <label class="col-sm-12">Type d'appartement</label>
 
-                              <div class="col-sm-12 border-bottom">
-                                  <select name="appartement" class="form-select shadow-none p-0 border-0 form-control-line">
-                                      <option value="">Studio</option>
-                                      <option value="">2 pièces</option>
-                                      <option value="">3 pièces</option>
-                                  </select>
-                              </div>
-                          </div>
-
-                          <div class="form-group mb-4">
-                              <label class="col-sm-12">Role</label>
-
-                              <div class="col-sm-12 border-bottom">
-                                  <select name="role" value="{{$edit->role}}" required class="form-select shadow-none p-0 border-0 form-control-line">
-                                      <option value="locataire" {{'locataire'== $edit->role? 'selected' : ''}}>Locataire</option>
-                                      <option value="admin" {{'admin'== $edit->role? 'selected' : ''}}>Admin</option>
-                                  </select>
-                              </div>
-                          </div>
 
                           <div class="form-group mb-4">
                               <div class="col-sm-12">
-                                  <button type="submit" class="btn btn-success text-uppercase px-md-5">Ajouter</button>
+                                  <button type="submit" class="btn btn-success text-uppercase px-md-5">Modifier</button>
                               </div>
                           </div>
                       </form>

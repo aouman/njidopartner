@@ -1,4 +1,4 @@
-@extends('layouts.adminApp')
+@extends('layouts.homeApp')
 
 @section('content')
 <!-- ============================================================== -->
@@ -42,8 +42,10 @@
             <div class="col-sm-6">
               <div class="card shadow rounded rounded-3">
                   <div class="card-body">
-                      <form class="form-horizontal form-material" action="{{URL::to('/insert-user')}}" method="post">
+                      <form class="form-horizontal form-material" action="{{URL::to('/insert-locataire')}}" method="post">
+                        @method('post')
                         @csrf
+                        
                           <div class="form-group mb-4">
                               <label class="col-md-12 p-0">Nom et Prénoms</label>
                               <div class="col-md-12 border-bottom p-0">
@@ -53,7 +55,7 @@
                           <div class="form-group mb-4">
                               <label for="example-email" class="col-md-12 p-0">Email</label>
                               <div class="col-md-12 border-bottom p-0">
-                                  <input type="email" placeholder="05 05 0478562"
+                                  <input type="email" placeholder="exemple@gmail.com"
                                       class="form-control p-0 border-0" name="email"
                                       id="email">
                               </div>
@@ -88,28 +90,7 @@
                                       id="password-confirm">
                               </div>
                           </div>
-                          <div class="form-group mb-4">
-                              <label class="col-sm-12">Type d'appartement</label>
 
-                              <div class="col-sm-12 border-bottom">
-                                  <select name="appartement" class="form-select shadow-none p-0 border-0 form-control-line">
-                                      <option value="">Studio</option>
-                                      <option value="">2 pièces</option>
-                                      <option value="">3 pièces</option>
-                                  </select>
-                              </div>
-                          </div>
-
-                          <div class="form-group mb-4">
-                              <label class="col-sm-12">Role</label>
-
-                              <div class="col-sm-12 border-bottom">
-                                  <select name="role" required class="form-select shadow-none p-0 border-0 form-control-line">
-                                      <option value="locataire">Locataire</option>
-                                      <option value="admin">Admin</option>
-                                  </select>
-                              </div>
-                          </div>
 
                           <div class="form-group mb-4">
                               <div class="col-sm-12">

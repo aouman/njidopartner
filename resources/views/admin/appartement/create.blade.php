@@ -1,4 +1,4 @@
-@extends('layouts.adminApp')
+@extends('layouts.homeApp')
 
 @section('content')
 <!-- ============================================================== -->
@@ -42,25 +42,28 @@
             <div class="col-sm-6">
               <div class="card shadow rounded rounded-3">
                   <div class="card-body">
-                      <form class="form-horizontal form-material">
+                      <form class="form-horizontal form-material" action="{{URL::to('/insert-apparte')}}" method="post" >
+                        @method('post')
+                        @csrf
                           <div class="form-group mb-4">
                               <label class="col-md-12 p-0">Type d'appartement</label>
                               <div class="col-md-12 border-bottom p-0">
-                                  <input type="text" placeholder="exemple : 3 pièces"
-                                      class="form-control p-0 border-0"> </div>
+                                  <input type="text" placeholder="exemple : 3 pièces" name="name"
+                                    id="appname"  class="form-control p-0 border-0">
+                              </div>
                           </div>
                           <div class="form-group mb-4">
                               <label for="example-email" class="col-md-12 p-0">La somme de l'appartement</label>
                               <div class="col-md-12 border-bottom p-0">
-                                  <input type="number" placeholder="100000"
-                                      class="form-control p-0 border-0" name="sommes"
-                                      id="sommes">
+                                  <input type="text" placeholder="100000"
+                                      class="form-control p-0 border-0" name="price"
+                                      id="appprice">
                               </div>
                           </div>
 
                           <div class="form-group mb-4">
                               <div class="col-sm-12">
-                                  <button type="submit" class="btn btn-success text-uppercase px-md-5">Créer</button>
+                                  <button type="submit" class="btn btn-success text-uppercase px-md-5">Créer l'appartement</button>
                               </div>
                           </div>
                       </form>
