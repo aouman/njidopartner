@@ -18,7 +18,6 @@ class CreateLocatairesTable extends Migration
           $table->string('name');
           $table->string('email')->unique();
           $table->string('phone')->nullable();
-          $table->date('date_location')->nullable();
           $table->string('password');
           $table->rememberToken();
           $table->timestamps();
